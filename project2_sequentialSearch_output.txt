@@ -1,0 +1,6 @@
+SearchTime				StartTime				Query
+false:0.0012000000ms	false:0.0000000000ms	92
+true:0.0005000000ms		true:0.0000000000ms		102
+true:0.0005000000ms		true:0.0000000000ms		4
+true:0.0005000000ms		true:0.0000000000ms		12
+true:0.0004000000ms		true:0.0000000000ms		7

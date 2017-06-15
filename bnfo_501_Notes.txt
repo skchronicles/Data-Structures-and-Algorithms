@@ -1,0 +1,220 @@
+################################(Quiz 1)###############################################
+From the provided text:
+﻿﻿﻿﻿"The first thing we will look at is the primary hardware components of a computer. If we
+ignore peripherals and output devices, the three main components of a computer are the:
+1.)
+Central processing unit (CPU).
+2.)
+    ﻿﻿﻿﻿﻿Random access memory (RAM) sometimes called the main or primary memory.
+3.)
+  ﻿﻿﻿T﻿he hard drive which is also called secondary memory."
+############
+
+
+From the provided text:
+"RAM is essentially the computer's workbench. It is the memory where the computer stores code and data that it is actively using. In more technical terms, RAM is basically a storage area of bytes that the CPU controls. RAM is relatively fast, especially when compared to a hard drive. Retrieving a particular byte from RAM can be done in a few nanoseconds (1 nanosecond = 1 billionth of a second). The main difference between RAM and our last component, the hard drive, is its speed and the fact that RAM is volatile or non persistent. This means that when RAM loses power, like when a computer is turned off, all the data in RAM is lost."
+
+Also, it states:
+"The last primary hardware component is a hard drive (HD). Hard drives are a type of secondary storage. Other types of secondary storage are flash drives, CDs, DVDs, magnetic tape, and blue ray. A hard drive is used for long term storage of data or persistent storage. Persistent means that, unlike RAM, when power is removed the data is still there. Hard drives are typically spinning metal disks on which data is stored with magnetic patterns. The other version of a hard drive is a solid state disk (SSD). SSD's have no moving parts and are faster than a magnetic disk, but are much more expensive. While it is faster than magnetic disks, it is still much slower then RAM. However, no matter what type you use, all of them provide persistent storage."
+########
+
+A byte is made up of 8 “bits,” it is also the smallest “addressable” unit. Bytes are represented as base 2 numbers, so each bit can have the binary value 1 or 0 and the value of each position is found by 2^(0-7). This means that one byte can have the decimal value of 0 –255. There are different conventions for the symbol of a byte, but it is typically denoted as “B.” 
+Prefixes are also used to represent multiple bytes. However, since it is base 2, a kilobyte 2^10 is 1024 bytes denoted as the symbol “kB” instead of 1000 bytes. Just to confuse things, you also have the symbol “kb” for kilobit. You can also have megabytes (MB), gigabytes (GB), terabytes (TB), etc. Because of the different naming conventions, there is sometimes some ambiguity on what a symbol means in some situations. The bits in a byte are ordered right to left. The left most bit is called the “most significant bit” or “high order bit,” in the same manner, the right most bit is called the “least significant bit” or “low order bit.” It is important that you remember, that all the memory in a computer is measured in bytes and that a byte is the smallest addressable unit in memory. 
+########
+
+ASCII (pronounced ask-ee) is an acronym for the American Standard Code for Information Interchange. ASCII is an encoding scheme for representing the English alphabet characters as numbers. In this encoding scheme, each letter is a byte and assigned a number from 0 to 127. For example, the ASCII code for uppercase N is the decimal value 78, the lowercase n is the decimal value 110. Since ASCII is what most computers use to represent text, this is what makes it possible to share data between computers. The first version of ASCII was published in 1963 and went through several revisions before it became the version we use today in 1986. While ASCII can represent English characters it does not support characters from other languages. To solve this, another encoding scheme was created called Unicode. Unicode represents characters as a two byte number. This means in can represent up to 65,536 (2^16) different characters, the disadvantage of Unicode is, since it is a two byte encoding scheme it takes twice the memory as ASCII.
+########
+
+char: The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).
+
+int: By default, the int data type is a 32-bit signed two's complement integer, which has a minimum value of -231 and a maximum value of 231-1. In Java SE 8 and later, you can use the int data type to represent an unsigned 32-bit integer, which has a minimum value of 0 and a maximum value of 232-1. Use the Integer class to use int data type as an unsigned integer. See the section The Number Classes for more information. Static methods like compareUnsigned, divideUnsigned etc have been added to the Integer class to support the arithmetic operations for unsigned integers.
+
+boolean: The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.
+########
+
+“2’s complement is a representation method that allows the use of binary arithmetic operations on signed integers to yield the correct 2's complement result. 2's complement is the method that is used in today’s computers to represent signed integers. In 2’s complement we still use the most significant bit to represent  the sign of the integer. So positive integers with a leading bit of 0 is straight forward, but negative numbers with a leading bit of 1 are slightly different. Negative numbers are 
+represented as a binary number that when added to a positive number with the same absolute value will equal zero. This makes implementing the logic gates in the CPU much simpler than any other representation.”
+########
+
+1,000,000
+
+################################(Quiz 2)###############################################
+
+N^2 means that as the size of the input increases, the time it takes for the algorithm to completes grows exponentially as N^2 (or in a quadratic manner). We call this a O(n^2) algorithm. 
+O(n^2) means the algorithm is an “order n squared” algorithm. This performance timing is typically seen in algorithms that use a nested for-loop (one nested for-loop).
+############
+
+As we can see for a small N,the algorithm with a better complexity takes longer than the other. This pattern is prominent in the study of algorithms;usually the simple approach is faster for small inputs, while the more complex approach is faster for large inputs.  This means that if we are worried about maximum efficiency all the time we must change our approach dependingon the size of the input.
+############
+
+2x^2
+
+################################(Quiz 3)###############################################
+
+list = ﻿﻿[10,20,30,40,50]
+
+Sequential Search (find the value 30﻿﻿﻿)﻿:
+
+    Best Case Scenario = 1
+    Worst Case Scenario= ﻿n
+    Example Above (finding 30) = 3 iterations
+
+Binary Search (find the value 30)
+
+    Best Case Scenario = 1
+    Worst Case Scenario= ﻿log2(n)
+    Example Above (finding 30) = 1 iteration (faster than sequential search)
+
+############
+Find: 80 [2 12 13 23 34 35 46 57 65 68 78 80 88]
+
+Active section: 
+Find 80 [2 12 13 23 34 35 46 57 65 68 78 80 88]    (1 + 13)/2 = 7.0 => 7
+
+Find 80 [57 65 68 78 80 88]                        (1 + 6)/2 = 3.5 => 3
+
+Find 80 [78 80 88]                                 (1 + 3)/2 = 2.0 => 2
+
+Find 80 FOUND == True
+############
+
+“A binary search can only be used when the data set is sorted and random access is supported.”
+﻿﻿﻿﻿﻿﻿
+################################(Quiz 4)###############################################
+﻿part of our array which we previously showed was at index j (unsorted section), sorted 
+
+############
+
+o(n^2)
+
+Also from the provided text:
+
+“Worst case performance: О(n^2)  
+	ex: A reverse sorted array.
+Best case performance: О(n)
+	ex: A sorted array
+Average case performance: О(n^2)”
+############
+
+O(nlog2(n)) algorithm
+############
+
+If we want grab the smallest value on a sorted array. Also, recursion is extremely RAM intensive. It may not be the best idea if your dataset contains more than a quadrillion integers (you may get a stack-over flow error).
+############
+
+Two elements 
+From the provided text:
+“The red “bubble” is going from left to right and each time it is putting the two elements inside it in the proper order.”
+############
+Insertion:
+From the provided text:
+
+“Concept for the algorithm 
+–to sort an array
+-Maintain two parts of array
+-Sorted part: –initially empty –left part
+-Unsorted: –initially full –right part
+-Take one element from the unsorted part and insert at correct position in the sorted part.
+- Iterate until all elements are moved to the sorted part of the array, and the unsorted 
+part is empty”
+
+“Worst case performance: О(n^2)  
+	ex: A reverse sorted array.
+Best case performance: О(n)
+	ex: A sorted array
+Average case performance: О(n^2)”
+
+Selection:
+From the provided text:
+
+“Selection sort will focus on a different, yet still intuitive, way of arranging elements into the correct order. Insertion Sort focused on moving elements from an unordered array and finding its place in an array that is ordered. Selection sort does something similar. However, instead of grabbing any element from the unordered array, it finds the largest element and swaps it with the smallest element of the ordered array. Remember, since the array is ordered, the smallest element will always be the left- most element of that array”
+
+“For each extra element in the array, the number of iterations we would have to do will grow by 1. During each of these iterations, we have to look at every element in the unsorted array. While this number gradually gets smaller as the algorithm progresses, ultimately as n gets larger, so will the number of elements we have to look at during each iteration. This tells us already that Selection Sort will be O(n^2).”
+
+
+############
+
+As mentioned above, merge sort is a divide and conquer algorithm. It divides the problem into smaller problems of the same nature, recursively solves them, and then combines their solutions. We will divide the array into two smaller arrays until the arrays contain just one element each.
+ 
+This division of the array creates a tree where each child node is an array that is half the size of its parent node. Each leaf will be an array containing just one element. This, as we have seen before, means that each leaf is a sorted array.
+############
+
+O(nlog2(n))
+############
+
+This means that the dividing process is O(log2(n)).
+############
+
+Now you may be asking yourself, how do we use Infinity in a Java program? Well, you can’t, but you can come close. All integers contain a maximum value. We can get this in Java with Integer.MAX_VALUE. The other numerical primitive data-types have wrappers that provide the maximum or infinity values as well.
+################################(Quiz 5)###############################################
+
+Trees  in  computer  science  are  used  as  a  means  of  storing  data  using  an  acyclic connected  graph  where  each  node  has  zero  or  more childrennodes  and  at  most  one parent
+node. Furthermore, the children of each node have a specific order. 
+############
+
+Node:
+-Each node has a key: x.key
+-Each node may have children: x.left, x.right
+    —-A null child represents no child
+-Each node has a parent: x.p
+    —-The  exception  to  this  is  the  root  node.  The  root  node  of  any  given  tree,  by definition, has no parent.
+-A binary tree must maintain certain properties with respect to these nodes. For each node x,
+    —-If node y is in a left subtree of x, y.key <= x.key
+    —-If node y is in a right subtree of x, y.key >= x.key
+############
+
+Each node in that subtree contains a key that is either less than or equal to x.key
+############
+
+False
+############
+We start at the root of the Tree.
+############
+While the current node’s left child is not null, we move on to that left child. When the left child is null we know we have reached the smallest value in the tree.
+############
+
+The second helper method is the Transplant method. This method does the actual work of removing a node from a tree. Its parameters include a tree, the node to be removed and the subtree that will take the place of that node.
+############
+If  the node  we  want  to  remove  has  a  null  parent  then  that  node  was  the  root  of  the tree. In this simple case we simply assign the root of the tree to the new subtree.
+If we remove a node that has only one child, we can just transplant the subtree represented by that node’s child to the parent. 
+If that node has more than one child then a single transplant won’t work.
+############
+
+Insertion = O(log(n))
+############
+
+So, if doing each of these operations is bound by O(nlog(n)), why use a tree over a linear list?  Well,  it  depends.  Given  some  list  of  comparable  elements,  sorting  that  list  will  be  faster than  inserting  the  entire  thing  into  a  binary  tree.  Using  a  standard  desktop,  a  sample  set  of 50,000,000 integers took about 9 seconds to sort. That same sample took almost 90 seconds to insert into a 
+binary tree. So the question remains, why use a binary tree? If  you  insert  something  into  a  linear  list,  the  insert  will  take  O(n)  time.  An  insert  into  a binary tree can be done in O(log(n)) time. The same applies for removals. So, if you are planning on manipulating the data then a binary tree is probably what you want. However, if you are not going to change the data, having a sorted list may be more beneficial than a tree. Basically, the binary tree is much faster to maintain after the initial preparation has been finished. You have options, use them wisely.
+############
+
+We  could  use  a  binary tree to store very large amounts of    information.    Every    node would  be  some  file  on  the  disk. As  we  traverse  the  tree we  will  have  to  do  a  disk  I/O  for  each  node  visited.  Even  if the  tree  is perfectly balanced we can still find ourselves doing lots of disk I/O’s for very large trees. To prevent this we want to store more than one thing in each file. To be more specific, since each disk read gets a page from the hard drive, we want to fit as much information into a node as possible before we overflow that page. This will ensure we make the most efficient use of our available resources while drastically reducing the time it takes to find information. This would be an appropriate time to use a B-tree.
+############
+
+The number of children coming out of these nodes will be equal to the number of separator keys+1.
+Note the number of keys in a node can be much larger than 2 or 3. In practical applications we may have thousands of keys in each node.
+Each node may have no more than 2t-1 keys (t is a predefined number that will regulate the properties of this tree). Each node, with the exception of the root, must have at least t-1 keys. In a non-empty tree, the root must have at least 1 key 
+############
+
+The node can have anywhere from ﻿4-9 keys.﻿﻿﻿
+############
+
+The node can have anywhere from ﻿5-10 children.
+############
+
+Every leaf in the B-Tree will have the same depth. i.e. the length of the paths from root to each leaf  is the same (equal to the height of the tree). 
+############
+
+The height of the tree  is  increased  by  one  whenever  we  have  to  split  the  root  and  this  is  the  only  way  that  the height of the tree is allowed to grow.
+﻿############
+
+In this case we want to delete ‘B’. We can’t just remove it because the leaf will have less than t-1 keys. We will want to increase the size of the node before attempting any removal. To make things simple, on removals we will check each node before we move to it to see if it has t-1  keys.  If  it  does,  we  will  preemptively  increase  the  size  of  that  node  just  in  case  the  key  we want  to  remove  is there.  There  are  several  different  approaches  to  do  this  depending  on  the siblings of that node.
+################################(Quiz 6)###############################################
+
+list and a linked-list ﻿﻿﻿﻿﻿
+############
+To finish up, we need to look at the complexity of hash tables. For insertions using the linked list implementation we have the time it takes to compute the index plus the time to insert into the linked list. Since we insert into the head, this gives us a best and worst case time complexity of O(1). For searches and deletions we have the time it takes to compute the index, plus the time it takes to find the element in the linked list. In the best case, we have only one element in each list which would give us a time complexity of O(1). The worst case, on the other hand, would be that all the keys hashed to the same index. If that happened, we would have a time complexity of O(n).  As long as care is taken in designing the hash table and hash function, there should be a relatively small number of collisions. So the average runtime for well-constructed hash tables would be O(1).
+############
+
+Avoiding collisions is one of the primary concerns when constructing hash functions.
+One of the simplest techniques we use is the size of the table. If the table of our example directory had a size of 10 then all the numbers ending in “00”, “10” and so on would each map to the same index. This gives us our standard for the table size: the size of hash tables should always be a prime number. This is because each division is more likely to be unique, since you are not with a common denominator other than itself. This will not completely avoid collisions but it will significantly reduce them.  Besides the table size, the only other way we can avoid collisions is by adjusting our key and hash function. As there is no good way to do this, usually we change our focus from avoiding, collisions to dealing with them.
+
